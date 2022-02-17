@@ -4,27 +4,66 @@
 <meta charset="utf-8">
 <title>리스트 정의하기</title>
 <style type="text/css">
-*			{ margin:0; padding:0 }
-body		{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+* {
+	/* 1. 기본 마진값과 패딩값을 없앱니다. */
+	margin: 0;
+	padding: 0
+}
 
+body {
+	/* 2. body 에 다음 속성을 적용해서 하위 엘리멘트 모두가 그 속성을 상속 받도록 해보세요. */
+	/* 기본글꼴 : “맑은 고딕”, “돋움” */
+	/* 기본글꼴 사이즈 : 0.75em( 12px ) */
+	/* 텍스트 색상 : #333 */
+	font-family: '맑은 고딕' 돋움;
+	font-size: 0.75em;
+	color: #333
+}
+
+ul, ol {
+	/* 2. <ul> 에 list-style-none을 주어 기본 블릿이 생기는 것을 막습니다. */
+	list-style-type: none;
+}
+
+ul {
+	/* 1. 모든 서브 <ul> 태그(엘리먼트)에 left margin값 20px을 주어  자연스럽게 depth가 생기도록 합니다. */
+	margin-left: 10px;
+}
+
+ul.multi {
+	margin: 50px auto;
+	width: 300px;
+}
+
+ul.multi li {
+	/* list item <li>에 이미지를 앞에 넣기 위해 left padding 값을 15px 줍니다. */
+	padding-left: 10px;
+	/* <li>에 블릿 이미지를 다음과 같이 설정합니다. */
+	/* image url : images/bullet11.jpg  */
+	/* repeat: no-repeat */
+	/* position: 0 8px */
+	background: url("/ch05/images/bullet11.jpg") 0 7px no-repeat;
+	/* 3. 리스트 li의 간격을 조정하기 위해 line-height 값을 1.8em ( 28.8px) 줍니다. */
+	line-height: 1.8em;
+}
 </style>
 </head>
 <body>
-	<ul class="root" >
+	<ul class="multi">
 		<li>리스트 스타일</li>
 		<li>리스트 스타일</li>
+		<ul>
+			<li>리스트 스타일</li>
+			<li>리스트 스타일</li>
 			<ul>
 				<li>리스트 스타일</li>
 				<li>리스트 스타일</li>
-					<ul>
-						<li>리스트 스타일</li>
-						<li>리스트 스타일</li>
-						<li>리스트 스타일</li>
-						<li>리스트 스타일</li>
-					</ul>
 				<li>리스트 스타일</li>
 				<li>리스트 스타일</li>
 			</ul>
+			<li>리스트 스타일</li>
+			<li>리스트 스타일</li>
+		</ul>
 		<li>리스트 스타일</li>
 		<li>리스트 스타일</li>
 	</ul>

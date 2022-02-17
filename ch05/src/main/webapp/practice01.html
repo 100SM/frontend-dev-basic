@@ -4,15 +4,77 @@
 <meta charset="utf-8">
 <title>테이블</title>
 <style type="text/css" media="screen">
+/* 1. 기본 마진값과 패딩값을 없앱니다. */
 * {
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
-
+/* 2. body 에 다음 속성을 적용해서 하위 엘리멘트 모두가 그 속성을 상속 받도록 해보세요. */
+/* 기본글꼴 : “맑은 고딕”, “돋움”*/
+/* 기본글꼴 사이즈 : 0.75em( 12px )*/
+/* 텍스트 색상 : #333 */
 body {
 	font-family: '맑은 고딕' 돋움;
 	font-size: 0.75em;
-	color: #333
+	color: #333;
+}
+
+.tbl-ex {
+	/*4. 그리고 테이블에 top margin 10px 과 중앙에 오도록  right-left 마진을 자동으로 적용합니다. */
+	margin: 50px auto;
+	/* 1) table 태그안의 속성 border 를 없애고  클래스 tbl-ex에  solid 타입의 #333  색상의  solid 타입의 */
+	/* border를 그어 보세요. */
+	border: 1px solid #333;
+	/* 테이블의 스타일 속성중 중요한 속성이 border-collapse 입니다.   border-collapse 속성값이 collapse이면 셀 간의 간격이 없어집니다.  마치, table 속성의 cellspacing  =  0 와 같습니다. */
+	border-collapse: collapse;
+	/* 1)  table의 왼쪽, 오른쪽 border를 0으로 설정해 보세요. */
+	border-left-width: 0;
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+.tbl-ex th, .tbl-ex td {
+	/* th 와 td 안의 콘텐츠가 너무 꽉 차 있습니다. 내부 콘텐츠의 간격을 벌리기 위해 th 와 td의 padding 값을 TRBL 모두 8px 정도 줍니다. */
+	padding: 8px;
+	/* 	1)번 처럼 하면 table 외각에만 선이 그어지고 내부 cell에는 선이 그어지지 않습니다. */
+	/* th, td에 같은 속성값의 border를 적용해 보세요.  두 종류의 태그 엘리멘트 들에 같은 속성을 적용하므로 그룹 선택자를 적용해 보세요. */
+	border: 1px solid #333;
+	/* 2)  th, td의 왼쪽, 오른쪽 border를 0으로 설정해 보세요. */
+	border-left-width: 0;
+	border-right-width: 0;
+	background-color: white;
+}
+
+.tbl-ex th {
+	/*  1) th에 백그라운드 색을 #999로  설정해 보세요. */
+	/* 2) th의 폰트 크기를 1.1em( 17.6px ) 로 설정해 보세요. */
+	/* 3) th의 텍스트 색상을 #fff(white)로 설정해  보세요. */
+	background-color: #999;
+	font-size: 1.1em;
+	color: #fff;
+	/* 	테이블 헤드의 border를 더 굵게 표시해서 타이틀을 더 강조하고 싶습니다. */
+	/* th의 top, bottom의 border  굵기를 2px로  더 굵게 만들어 보세요. */
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+}
+
+.tbl-ex td {
+	/* 타이틀을 제외한 게시물 리스트에서 게시물 간의 구분은 점선으로 하는 것이 더 보기 좋을 듯 싶습니다.  */
+	/* td의 border 스타일을 dotted로  적용해보세요. */
+	border-style: dotted;
+}
+
+.tbl-ex tr.even td {
+	/* 그림과 같이 짝수번째 <tr>에는 기본 백그라운드 색상을  #E8ECF6 로 적용하고 싶습니다. 그림을 참고 해서 적용해 보세요. */
+	background-color: #E8ECF6;
+}
+
+.tbl-ex tr:hover td {
+	/* <tr> 태그에 (게시물에)  마우스가 올라가면 백그라운드 색상이 #fc6 되게 스타일을 추가해 보세요. */
+	/* 또 커서의 이미지가 손 모양이 되도록 스타일을 추가해 보세요. */
+	background-color: #fc6;
+	/* tr위에 td가 있기때문에 td의 배경색을 변경해 주어야 함 */
+	cursor: pointer;
 }
 </style>
 </head>
