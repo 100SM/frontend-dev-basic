@@ -3,6 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	var registerEventHandler = function(element, eventName, eventHandler) {
+// 		if (element.attachEvent) {
+// 			element.attachEvent
+// 		} else {
+// 			element.addEventListener
+// 		}
+		
+		 
+		element &&				// element가 null이 아니면
+		element.attachEvent &&	// <= IE8
+		element.attachEvent("on" + eventName, eventHandler);
+		
+		element &&					// element가 null이 아니면
+		element.addEventListener &&	// 표준 브라우저
+		element.addEventListener(eventName, eventHandler);
+		
+	}
+
+	window.addEventListener("load", function() {
+		var el = document.getElementById("header");
+		
+		var clickEventHanlder1 = function() {
+			console.log("click1");
+		}
+		
+		var clickEventHanlder2 = function() {
+			console.log("click2");
+		}
+		
+		var clickEventHanlder3 = function() {
+			console.log("click3");
+		}
+		
+		// 다중 Listener 예제
+		registerEventHandler(el, "click", clickEventHanlder1);
+		registerEventHandler(el, "click", clickEventHanlder2);
+		
+		// Level 0 도 Level 2 를 지원
+		el.onclick = clickEventHanlder3;
+		
+		// 제거
+		el.removeEventListener("click", clickEventHanlder2);
+	});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
