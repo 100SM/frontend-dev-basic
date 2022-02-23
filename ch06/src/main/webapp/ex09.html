@@ -3,6 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.addEventListener("load",function() {
+		var imgElement = document.createElement('img');
+		
+		// 속성(attribute)을 읽기/쓰기 위해서 setAttribute/getAttribute 사용
+		imgElement.setAttribute('src', 'https://item.kakaocdn.net/do/c6da697d32943268c295c0417c45356e7154249a3890514a43687a85e6b6cc82');
+		imgElement.setAttribute('style', 'width: 200px');
+		imgElement.alt = "집에가고싶다";
+		imgElement.title = "집에가고싶다~~~~~~~~";
+		
+		imgElement['no'] = 10;								// property
+		imgElement.setAttribute('data-name', 'goToHome');	// 비표준 속성 사용시 data- prefix를 달아준다
+
+		setTimeout(function() {
+			document.body.appendChild(imgElement);
+			console.log(imgElement['no' /*property*/], imgElement.getAttribute('no') /*attribute*/);
+			console.log(imgElement.alt, imgElement['data-name']);
+		}, 2000);
+	});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

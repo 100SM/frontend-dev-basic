@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.addEventListener("load", function() {
+		var imgElement = document.createElement('img');
+		imgElement.src = "https://item.kakaocdn.net/do/c6da697d32943268c295c0417c45356e7154249a3890514a43687a85e6b6cc82";
+		imgElement.style.width = "200px";
+		imgElement.alt = "집에가고싶다";
+		imgElement.title = "집에가고싶다~~~~~~~~";
+		
+		setTimeout(function() {
+			document.body.appendChild(imgElement);
+		}, 2000);
+	});
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
