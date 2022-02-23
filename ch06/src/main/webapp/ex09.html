@@ -7,14 +7,15 @@
 	window.addEventListener("load",function() {
 		var imgElement = document.createElement('img');
 		
-		// 속성(attribute)을 읽기/쓰기 위해서 setAttribute/getAttribute 사용
+		// (표준[property O] + 비표준[property X]) 속성(attribute)을 쓰기/읽기 위해서 setAttribute/getAttribute 사용
 		imgElement.setAttribute('src', 'https://item.kakaocdn.net/do/c6da697d32943268c295c0417c45356e7154249a3890514a43687a85e6b6cc82');
 		imgElement.setAttribute('style', 'width: 200px');
 		imgElement.alt = "집에가고싶다";
 		imgElement.title = "집에가고싶다~~~~~~~~";
 		
 		imgElement['no'] = 10;								// property
-		imgElement.setAttribute('data-name', 'goToHome');	// 비표준 속성 사용시 data- prefix를 달아준다
+		imgElement.setAttribute('data-name', 'goToHome');	// 비표준 속성(property X)
+															// 사용시 data- prefix를 달아준다
 
 		setTimeout(function() {
 			document.body.appendChild(imgElement);
