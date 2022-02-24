@@ -17,6 +17,7 @@ var _jQuery = function(elements) {
 	for (var i = 0; i < elements.length; i++) {
 		this[i] = elements[i];
 	}
+	return this;
 }
 
 _jQuery.prototype.jquery = "jquery.simple-0.0.1";
