@@ -30,5 +30,7 @@ _jQuery.prototype.click = function(handler) {
 		this[i].addEventListener("click", handler);
 	}
 }
-
+_jQuery.prototype.get = function(index) {
+	return this[index];
+}
 var $ = jQuery;
