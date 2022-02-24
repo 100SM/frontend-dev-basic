@@ -57,9 +57,7 @@ ul, ol {
 	$(function() {
 		$(".tab-box ul li").click(function() {
 			// unselected
-			var lisSelected = $("li[class='selected']");
-			(lisSelected.length === 1) && (lisSelected[0].className = "");
-
+			$("ul li").removeClass("selected");
 			// selected
 			$(this).addClass("selected");
 		});
