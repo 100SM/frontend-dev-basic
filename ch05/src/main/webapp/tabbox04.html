@@ -55,8 +55,7 @@ ul, ol {
 <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 	$(function() {
-		var $obj = $(".tab-box ul li");
-		$obj.click(function() {
+		$(".tab-box ul li").click(function() {
 			// unselected
 			var lisSelected = $("li[class='selected']");
 			(lisSelected.length === 1) && (lisSelected[0].className = "");
