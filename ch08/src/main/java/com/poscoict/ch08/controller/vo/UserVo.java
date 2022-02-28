@@ -4,8 +4,6 @@ public class UserVo {
 	private Long no;
 
 	private String name;
-	// @Pattern(regexp =
-	// "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")
 	private String email;
 	private String password;
 	private String gender;

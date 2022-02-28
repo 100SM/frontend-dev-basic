@@ -10,8 +10,74 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
-<script type="text/javascript">
+<script>
 	$(function() {
+		$("#create").click(function() {
+			var vo = {
+				name : "둘리",
+				email : "dooly@gmail.com",
+				password : "1234",
+				gender : "male"
+			}
+
+			$.ajax({
+				url : "${pageContext.request.contextPath }/api/user",
+				async : true,
+				type : 'post', // 요청 method
+				dataType : 'json', // 응답 포맷,
+				contentType : 'application/json',
+				data : JSON.stringify(vo),
+				success : function(response) {
+					console.log(response);
+				}
+			});
+		});
+
+		$("#read").click(function() {
+			$.ajax({
+				url : "${pageContext.request.contextPath }/api/user/10",
+				async : true,
+				type : 'get', // 요청 method
+				dataType : 'json', // 응답 포맷,
+				success : function(response) {
+					console.log(response);
+				}
+			});
+		});
+
+		$("#update").click(function() {
+			var vo = {
+				name : "둘리",
+				password : "1234",
+				gender : "female"
+			}
+
+			$.ajax({
+				url : "${pageContext.request.contextPath }/api/user/10",
+				async : true,
+				type : 'put', // 요청 method
+				dataType : 'json', // 응답 포맷,
+				contentType : 'application/json',
+				data : JSON.stringify(vo),
+				success : function(response) {
+					console.log(response);
+				}
+			});
+		});
+
+		$("#delete").click(function() {
+			$.ajax({
+				url : "${pageContext.request.contextPath }/api/user/10",
+				async : true,
+				type : 'delete', // 요청 method
+				dataType : 'json', // 응답 포맷,
+				contentType : 'application/x-www-form-urlencoded',
+				data : "password=1234",
+				success : function(response) {
+					console.log(response);
+				}
+			});
+		});
 
 	});
 </script>
@@ -19,20 +85,21 @@
 <body>
 	<h1>AJAX Test: Restful API</h1>
 
-	<button id="create">Creat(POST)</button>
-	<br>
-	<br>
+	<button id="create">Create(POST)</button>
+	<br />
+	<br />
 
-	<button id="reate">Read(GET)</button>
-	<br>
-	<br>
+	<button id="read">Read(GET)</button>
+	<br />
+	<br />
 
 	<button id="update">Update(PUT)</button>
-	<br>
-	<br>
+	<br />
+	<br />
 
 	<button id="delete">Delete(DELETE)</button>
-	<br>
-	<br>
+	<br />
+	<br />
+
 </body>
 </html>
