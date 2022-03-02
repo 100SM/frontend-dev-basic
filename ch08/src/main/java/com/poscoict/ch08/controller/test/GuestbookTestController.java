@@ -24,4 +24,5 @@ public class GuestbookTestController {
 	public String ex03() {
 		return "gb/ex03";
 	}
+
 }
